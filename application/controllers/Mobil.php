@@ -58,10 +58,10 @@ class Mobil extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-    public function ubah($id_car)
+    public function ubah($No_mobil)
     {
         $data['judul'] = 'Form Ubah Data Mobil';
-        $data['mobil'] = $this->Mobil_model->getCarById($id_car);
+        $data['mobil'] = $this->Mobil_model->getCarById($No_mobil);
         
        
         $this->form_validation->set_rules('No_polisi', 'No Polisi', 'required');
