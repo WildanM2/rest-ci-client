@@ -12,8 +12,8 @@
                         <input type="hidden" name="No_mobil" value="<?= $mobil['No_mobil']; ?>">
                         
                       
-
-
+                       
+                        
                         <div class="form-group">
                             <label for="No_polisi">No Polisi</label>
                             <input type="text" name="No_polisi" class="form-control" id="No_polisi" value="<?= $mobil['No_polisi']; ?>">

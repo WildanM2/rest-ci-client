@@ -42,17 +42,17 @@ class Mobil extends CI_Controller
         }
     }
 
-    public function hapus($id_car)
+    public function hapus($No_mobil)
     {
-        $this->Mobil_model->hapusDataMobil($id_car);
+        $this->Mobil_model->hapusDataMobil($No_mobil);
         $this->session->set_flashdata('flash', 'Dihapus');
         redirect('mobil');
     }
 
-    public function detail($id_car)
+    public function detail($No_mobil)
     {
         $data['judul'] = 'Detail Data Mobil';
-        $data['mobil'] = $this->Mobil_model->getCarById($id_car);
+        $data['mobil'] = $this->Mobil_model->getCarById($No_mobil);
         $this->load->view('templates/header', $data);
         $this->load->view('mobil/detail', $data);
         $this->load->view('templates/footer');
@@ -62,8 +62,8 @@ class Mobil extends CI_Controller
     {
         $data['judul'] = 'Form Ubah Data Mobil';
         $data['mobil'] = $this->Mobil_model->getCarById($No_mobil);
-        
-       
+         
+       // $this->form_validation->set_rules('No_mobil', 'No Mobil', 'required');
         $this->form_validation->set_rules('No_polisi', 'No Polisi', 'required');
         $this->form_validation->set_rules('Nama_mobil', 'Nama Mobil', 'required');
         $this->form_validation->set_rules('Warna', 'Warna Mobil', 'required');

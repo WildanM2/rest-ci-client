@@ -61,11 +61,11 @@ class Mobil_model extends CI_model {
      
     }
 
-    public function hapusDataMobil($id_car)
+    public function hapusDataMobil($No_mobil)
     {
         $response = $this->_client->request('DELETE', 'rental', [
             'form_params' => [
-                'id_car' => $id_car,
+                'No_mobil' => $No_mobil,
                 'X-API-KEY' => '123456'
                 
             ]
@@ -83,6 +83,7 @@ class Mobil_model extends CI_model {
     public function ubahDataMobil()
     {
         $data = [
+            'No_mobil' =>$this->input->post('No_mobil', true),
             'No_polisi' =>$this->input->post('No_polisi', true),
             'Nama_mobil' =>$this->input->post('Nama_mobil', true),
             'Warna' =>$this->input->post('Warna', true),
